@@ -12,10 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name="cliente")
+@Table(name="cliente", uniqueConstraints = @UniqueConstraint(columnNames = "cedulacliente"))
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
