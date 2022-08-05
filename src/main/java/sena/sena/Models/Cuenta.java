@@ -14,14 +14,13 @@ public class Cuenta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name="numerocita", length=50, nullable = false)
+    @Column(name="numerocta", length=50, nullable = false)
     @NotEmpty
-    private String numerocita;
+    private String numerocta;
     @Column(name="titular", length=100, nullable = false)
     @NotEmpty
     private String titular;
     @Column(name="saldo", length=50, nullable = false)
-    @NotEmpty
     private double saldo;
     @Column(name="fechaapertura", length=100, nullable = false)
     @NotEmpty
@@ -33,15 +32,17 @@ public class Cuenta {
     public Cuenta() {
     }
 
-    public Cuenta(Integer id, @NotEmpty String numerocita, @NotEmpty String titular, @NotEmpty double saldo,
+
+    public Cuenta(Integer id, @NotEmpty String numerocta, @NotEmpty String titular, @NotEmpty double saldo,
             @NotEmpty String fechaapertura, String estado) {
         this.id = id;
-        this.numerocita = numerocita;
+        this.numerocta = numerocta;
         this.titular = titular;
         this.saldo = saldo;
         this.fechaapertura = fechaapertura;
         this.estado = estado;
     }
+
 
     public Integer getId() {
         return id;
@@ -51,12 +52,12 @@ public class Cuenta {
         this.id = id;
     }
 
-    public String getNumerocita() {
-        return numerocita;
+    public String getNumerocta() {
+        return numerocta;
     }
 
-    public void setNumerocita(String numerocita) {
-        this.numerocita = numerocita;
+    public void setNumerocta(String numerocta) {
+        this.numerocta = numerocta;
     }
 
     public String getTitular() {
