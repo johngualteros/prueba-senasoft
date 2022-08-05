@@ -37,8 +37,7 @@ public class Cliente {
     private Double telefono;
 
     @Column(name = "estado")
-    @Value("${status:true")
-    private Boolean estado;
+    private Boolean estado = true;
 
     public Cliente(Integer idcliente, @NotEmpty String cedulacliente, @NotEmpty String nombre, Double telefono,
             Boolean estado) {
