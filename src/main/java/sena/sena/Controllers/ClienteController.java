@@ -13,5 +13,5 @@ import sena.sena.Models.Services.IClienteService;
 @RequestMapping("/clientes")
 public class ClienteController {
 
-    @Autowired IClienteService
+   
 }
