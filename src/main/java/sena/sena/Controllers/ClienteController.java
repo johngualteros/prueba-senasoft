@@ -20,5 +20,34 @@ import sena.sena.Models.Services.IClienteService;
 @RequestMapping("/clientes")
 public class ClienteController {
 
-   
+    @Autowired IClienteService cliented;
+
+    @GetMapping(path={"/index"})
+    public String index(){
+        return "redirect:/index";
+    }
+
+    @GetMapping(path={"/","","listar"})
+    public String listar(Model m){
+        m.addAttribute("clientes", cliented.findAll());
+        return "views/clientes/listar";
+    }
+
+    @GetMapping(path= {"form","formulario"})
+    public String form(Model m){
+        Cliente cliente = new Cliente();
+        m.addAttribute("cliente", cliente);
+        return "views/clientes/form";
+    }
+
+    @PostMapping("/add")
+        public String add(@Valid Cliente cliente,BindingResult response, Model m,SessionStatus status){
+
+            if(response.hasErrors()){
+                return "views/clientes/form";
+            }
+            cliented.save(cliente);
+            status.setComplete();
+            return "redirect:/clientes/listar";
+    }
 }
