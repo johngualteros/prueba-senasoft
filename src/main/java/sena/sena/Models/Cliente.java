@@ -20,7 +20,7 @@ import javax.validation.constraints.NotEmpty;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCliente;
+    private Integer idcliente;
     
     @Column(name = "cedulacliente", length=50, nullable = false)
     @NotEmpty
@@ -35,9 +35,9 @@ public class Cliente {
     private Double telefono;
 
     
-    public Cliente(Integer idCliente, @NotEmpty String cedulacliente, @NotEmpty String nombre,
+    public Cliente(Integer idcliente, @NotEmpty String cedulacliente, @NotEmpty String nombre,
             @NotEmpty Double telefono) {
-        this.idCliente = idCliente;
+        this.idcliente = idcliente;
         this.cedulacliente = cedulacliente;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -62,12 +62,13 @@ public class Cliente {
     public void setTelefono(Double telefono) {
         this.telefono = telefono;
     }
-    public Integer getIdCliente() {
-        return idCliente;
+    public Integer getIdcliente() {
+        return idcliente;
     }
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+    public void setIdcliente(Integer idcliente) {
+        this.idcliente = idcliente;
     }
+    
     
     
 }

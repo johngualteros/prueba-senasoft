@@ -33,7 +33,7 @@ public class ClienteController {
         return "views/clientes/listar";
     }
 
-    @GetMapping(path= {"add","form"})
+    @GetMapping(path= {"form","formulario"})
     public String form(Model m){
         Cliente cliente = new Cliente();
         m.addAttribute("cliente", cliente);

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
@@ -11,13 +11,25 @@
 
   </head>
   <body>
-    <form method="post" th:object="${cliente}" th:action="@{/clientes/add}">
+    <!-- <form method="post" th:object="${cliente}" th:action="@{/clientes/add}" class="col-md-4 offset-md-4 card card-body">
         <div class="mb-3">
-            <label for="nombreGenero">Nombre</label><br>
-            <input type="text" name="nombreGenero" id="nombreGenero" placeholder="Porfavor digite el nombre" class="input" th:field="*{nombreGenero}">
-            <div class="form-text fw-bold text-danger" th:if="${#fields.hasErrors('nombreGenero')}"th:errors="*{nombreGenero}"></div>
+            <label for="cedulacliente">Cedula</label><br>
+            <input type="text" name="cedulacliente" id="cedulacliente" placeholder="Porfavor digite la cedula" class="input" th:field="*{cedulaCliente}">
+            <div class="form-text fw-bold text-danger" th:if="${#fields.hasErrors('cedulacliente')}"th:errors="*{cedulacliente}"></div>
         </div>
-    </form>
+        <div class="mb-3">
+            <label for="nombre">Nombre</label><br>
+            <input type="text" name="nombre" id="nombre" placeholder="Porfavor digite su nombre" class="input" th:field="*{nombre}">
+            <div class="form-text fw-bold text-danger" th:if="${#fields.hasErrors('nombre')}"th:errors="*{nombre}"></div>
+        </div>
+        <div class="mb-3">
+            <label for="telefono">Telefono</label><br>
+            <input type="text" name="telefono" id="telefono" placeholder="Porfavor digite su telefono" class="input" th:field="*{telefono}">
+            <div class="form-text fw-bold text-danger" th:if="${#fields.hasErrors('telefono')}"th:errors="*{telefono}"></div>
+        </div>
+        <button type="submit" class="btn btn-primary fw-bold rounded w-100">Save</button>
+    </form> -->
+    <h1>Add</h1>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 
