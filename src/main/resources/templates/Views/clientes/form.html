@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
@@ -11,25 +11,24 @@
 
   </head>
   <body>
-    <!-- <form method="post" th:object="${cliente}" th:action="@{/clientes/add}" class="col-md-4 offset-md-4 card card-body">
+    <form method="post" th:object="${cliente}" th:action="@{/clientes/add}" class="col-md-4 offset-md-4 card card-body my-5">
         <div class="mb-3">
             <label for="cedulacliente">Cedula</label><br>
-            <input type="text" name="cedulacliente" id="cedulacliente" placeholder="Porfavor digite la cedula" class="input" th:field="*{cedulaCliente}">
+            <input type="text" name="cedulacliente" id="cedulacliente" placeholder="Porfavor digite la cedula" class="form-control" th:field="*{cedulacliente}">
             <div class="form-text fw-bold text-danger" th:if="${#fields.hasErrors('cedulacliente')}"th:errors="*{cedulacliente}"></div>
         </div>
         <div class="mb-3">
             <label for="nombre">Nombre</label><br>
-            <input type="text" name="nombre" id="nombre" placeholder="Porfavor digite su nombre" class="input" th:field="*{nombre}">
+            <input type="text" name="nombre" id="nombre" placeholder="Porfavor digite su nombre" class="form-control" th:field="*{nombre}">
             <div class="form-text fw-bold text-danger" th:if="${#fields.hasErrors('nombre')}"th:errors="*{nombre}"></div>
         </div>
         <div class="mb-3">
             <label for="telefono">Telefono</label><br>
-            <input type="text" name="telefono" id="telefono" placeholder="Porfavor digite su telefono" class="input" th:field="*{telefono}">
+            <input type="tel" name="telefono" id="telefono" placeholder="Porfavor digite su telefono" class="form-control" th:field="*{telefono}">
             <div class="form-text fw-bold text-danger" th:if="${#fields.hasErrors('telefono')}"th:errors="*{telefono}"></div>
         </div>
         <button type="submit" class="btn btn-primary fw-bold rounded w-100">Save</button>
-    </form> -->
-    <h1>Add</h1>
+    </form>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 

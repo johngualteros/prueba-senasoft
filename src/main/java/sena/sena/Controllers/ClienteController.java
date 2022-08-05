@@ -37,14 +37,14 @@ public class ClienteController {
     public String form(Model m){
         Cliente cliente = new Cliente();
         m.addAttribute("cliente", cliente);
-        return "views/clientes/add";
+        return "views/clientes/form";
     }
 
     @PostMapping("/add")
         public String add(@Valid Cliente cliente,BindingResult response, Model m,SessionStatus status){
 
             if(response.hasErrors()){
-                return "views/clientes/add";
+                return "views/clientes/form";
             }
             cliented.save(cliente);
             status.setComplete();

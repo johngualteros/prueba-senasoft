@@ -31,7 +31,6 @@ public class Cliente {
     private String nombre;
 
     @Column(name = "telefono", length = 50, nullable = false)
-    @NotEmpty
     private Double telefono;
 
     
@@ -42,6 +41,7 @@ public class Cliente {
         this.nombre = nombre;
         this.telefono = telefono;
     }
+
     public Cliente(){}
     
     public String getCedulacliente() {
