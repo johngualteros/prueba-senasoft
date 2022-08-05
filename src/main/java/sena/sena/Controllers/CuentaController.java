@@ -35,7 +35,7 @@ public class CuentaController {
     Cuenta cuenta = new Cuenta();
     m.addAttribute("cuenta", cuenta);
     m.addAttribute("accion","Crear Cuenta");
-    return "views/cuenta/form";
+    return "views/cuenta/add";
   }
   
   @PostMapping("/add")
