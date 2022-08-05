@@ -27,7 +27,7 @@ public class CuentaController {
     @GetMapping(path = {"/listar","","/"})
     public String listar(Model m){
         m.addAttribute("cuentas", cuentad.findAll());
-        return "www.google.com";
+        return "hola";
     }
 
     @GetMapping("/form")
@@ -35,7 +35,7 @@ public class CuentaController {
     Cuenta cuenta = new Cuenta();
     m.addAttribute("cuenta", cuenta);
     m.addAttribute("accion","Crear Cuenta");
-    return "Google";
+    return "hola";
   }
   
   @PostMapping("/add")
