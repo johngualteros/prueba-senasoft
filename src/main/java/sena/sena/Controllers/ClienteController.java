@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -37,12 +38,31 @@ public class ClienteController {
     public String form(Model m){
         Cliente cliente = new Cliente();
         m.addAttribute("cliente", cliente);
+        m.addAttribute("accion", "crear");
         return "views/clientes/form";
+    }
+
+    @GetMapping("/delete/{idcliente}")
+        public String delete(@PathVariable Integer idcliente) {
+        if(idcliente > 0) {
+        cliented.delete(idcliente);
+        }
+
+        return "redirect:/clientes";
+    }
+    @GetMapping("/edit/{idcliente}")
+    public String edit(@PathVariable Integer idcliente) {
+        Cliente cliente = null;
+        if (idcliente > 0) {
+            cliente = cliented.findOne(idcliente);
+            cliente.setEstado(!cliente.getEstado());
+            cliented.save(cliente);
+        }
+        return "redirect:/clientes";
     }
 
     @PostMapping("/add")
         public String add(@Valid Cliente cliente,BindingResult response, Model m,SessionStatus status){
-
             if(response.hasErrors()){
                 return "views/clientes/form";
             }

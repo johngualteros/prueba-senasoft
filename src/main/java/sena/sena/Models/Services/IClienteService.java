@@ -5,5 +5,6 @@ import java.util.List;
 public interface IClienteService {
     public List<Cliente> findAll();
     public void save (Cliente cliente);
-    public void delete(Integer idCliente);
+    public Cliente findOne(Integer idcliente);
+    public void delete(Integer idcliente);
 }

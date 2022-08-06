@@ -12,6 +12,8 @@
   </head>
   <body>
     <form method="post" th:object="${cliente}" th:action="@{/clientes/add}" class="col-md-4 offset-md-4 card card-body my-5">
+        <a href="/clientes">Volver Atras</a>
+        <h1 class="display-3 fw-bold text-center my-5">Agregar Cliente</h1>
         <div class="mb-3">
             <label for="cedulacliente">Cedula</label><br>
             <input type="text" name="cedulacliente" id="cedulacliente" placeholder="Porfavor digite la cedula" class="form-control" th:field="*{cedulacliente}">

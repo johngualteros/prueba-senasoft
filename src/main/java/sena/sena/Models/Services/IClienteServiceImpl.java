@@ -24,8 +24,13 @@ public class IClienteServiceImpl implements IClienteService{
     }
 
     @Override
-    public void delete(Integer idCliente) {
-        cliented.deleteById(idCliente);
+    public void delete(Integer idcliente) {
+        cliented.deleteById(idcliente);
+    }
+
+    @Override
+    public Cliente findOne(Integer idcliente) {
+        return cliented.findById(idcliente).orElse(null);
     }
     
 }
