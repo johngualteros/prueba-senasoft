@@ -13,82 +13,85 @@ import javax.validation.constraints.NotEmpty;
 public class Cuenta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    @Column(name="numerocta", length=50, nullable = false)
-    @NotEmpty
-    private String numerocta;
-    @Column(name="titular", length=100, nullable = false)
+    private Integer idcuenta;
+
+    @Column(name = "numerocuenta", unique = true)
+    @NotEmpty(message = "El numero de cuenta no puede estar vacia")
+    private String numerocuenta;
+
+    @Column(name = "titular", length = 50, nullable = false)
     @NotEmpty
     private String titular;
-    @Column(name="saldo", length=50, nullable = false)
+
+    @Column(name = "saldo", length = 50, nullable = false)
     private double saldo;
-    @Column(name="fechaapertura", length=100, nullable = false)
+
+    @Column(name = "fechaapertura", length = 50, nullable = false)
     @NotEmpty
     private String fechaapertura;
-    @Column(name="estado" ,length=1)
-    private String estado;
+
+    @Column(name = "estado")
+    private Boolean estado = true;
 
 
     public Cuenta() {
     }
 
-
-    public Cuenta(Integer id, @NotEmpty String numerocta, @NotEmpty String titular, @NotEmpty double saldo,
-            @NotEmpty String fechaapertura, String estado) {
-        this.id = id;
-        this.numerocta = numerocta;
-        this.titular = titular;
-        this.saldo = saldo;
-        this.fechaapertura = fechaapertura;
-        this.estado = estado;
+    public Cuenta(Integer idcuenta, @NotEmpty(message = "El numero de cuenta no puede estar vacia") String numerocuenta,
+        @NotEmpty String titular, double saldo, @NotEmpty String fechaapertura, Boolean estado) {
+      this.idcuenta = idcuenta;
+      this.numerocuenta = numerocuenta;
+      this.titular = titular;
+      this.saldo = saldo;
+      this.fechaapertura = fechaapertura;
+      this.estado = estado;
     }
 
-
-    public Integer getId() {
-        return id;
+    public Integer getIdcuenta() {
+      return idcuenta;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdcuenta(Integer idcuenta) {
+      this.idcuenta = idcuenta;
     }
 
-    public String getNumerocta() {
-        return numerocta;
+    public String getNumerocuenta() {
+      return numerocuenta;
     }
 
-    public void setNumerocta(String numerocta) {
-        this.numerocta = numerocta;
+    public void setNumerocuenta(String numerocuenta) {
+      this.numerocuenta = numerocuenta;
     }
 
     public String getTitular() {
-        return titular;
+      return titular;
     }
 
     public void setTitular(String titular) {
-        this.titular = titular;
+      this.titular = titular;
     }
 
     public double getSaldo() {
-        return saldo;
+      return saldo;
     }
 
     public void setSaldo(double saldo) {
-        this.saldo = saldo;
+      this.saldo = saldo;
     }
 
     public String getFechaapertura() {
-        return fechaapertura;
+      return fechaapertura;
     }
 
     public void setFechaapertura(String fechaapertura) {
-        this.fechaapertura = fechaapertura;
+      this.fechaapertura = fechaapertura;
     }
 
-    public String getEstado() {
-        return estado;
+    public Boolean getEstado() {
+      return estado;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setEstado(Boolean estado) {
+      this.estado = estado;
     }
 }
