@@ -34,6 +34,9 @@
       <a href="/clientes/form" class="btn btn-primary m-2 fw-bold shadow-lg"
         >Agregar Cliente</a
       >
+      <a th:href="@{/clientes/listar(format=pdf)}" class="btn btn-primary m-2 fw-bold shadow-lg"
+        >Reporte Pdf</a
+      >
     <a href="/">Volver Atras</a>
       <div
         th:if="${clientes.size()==0}"
